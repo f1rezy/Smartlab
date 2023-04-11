@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Smartlab</string>
+    <string name="example_mail">example@mail.ru</string>
+    <string name="search">Искать анализы</string>
+</resources>

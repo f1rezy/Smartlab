@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CodePage">
+
+    <com.mukeshsolanki.OtpView
+        android:id="@+id/otp_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="46dp"
+        android:layout_marginTop="211dp"
+        android:layout_marginEnd="47dp"
+        android:layout_marginBottom="472dp"
+        android:hint="pincode"
+        android:inputType="number"
+        android:itemBackground="@drawable/bg_otp_item"
+        android:textAllCaps="true"
+        android:textColor="@android:color/black"
+        app:OtpHideLineWhenFilled="true"
+        app:OtpItemCount="4"
+        app:OtpItemSpacing="10dp"
+        app:OtpLineColor="@color/white"
+        app:OtpState_filled="true"
+        app:OtpViewType="line"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>
