@@ -1,4 +1,4 @@
-package com.example.smartlab
+package com.example.smartlab.activities
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -27,10 +27,8 @@ class CodePage : AppCompatActivity() {
     fun getSignInRequest(code: String) {
         val url = "https://medic.madskill.ru/api/signin"
         val queue = Volley.newRequestQueue(this)
-        val stringRequest = object : StringRequest(
-            Request.Method.POST, url,
-            {
-                    response->
+        val stringRequest = object : StringRequest(Request.Method.POST, url,
+            { response->
                 val obj = JSONObject(response)
                 val token = obj.getString("token")
                 val encryptedPreferences = EncryptedSharedPreferences.create(

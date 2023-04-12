@@ -4,55 +4,86 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainPage">
+    tools:context=".activities.MainPage"
+    android:background="@color/grey">
 
     <EditText
         android:id="@+id/searhEditText"
-        android:layout_width="0dp"
+        android:layout_width="350dp"
         android:layout_height="55dp"
-        android:layout_marginStart="20dp"
+        android:layout_marginStart="15dp"
         android:layout_marginTop="20dp"
-        android:layout_marginEnd="20dp"
+        android:layout_marginEnd="15dp"
         android:background="@drawable/edittext"
+        android:drawableStart="@drawable/search_logo"
         android:ems="10"
         android:hint="@string/search"
         android:inputType="text"
+        android:padding="10dp"
         android:paddingStart="13dp"
         android:paddingEnd="13dp"
-        android:drawableStart="@drawable/search_logo"
-        android:padding="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/newsRecycler"
+    <androidx.core.widget.NestedScrollView
         android:layout_width="0dp"
-        android:layout_height="170dp"
-        android:layout_marginTop="72dp"
-        android:focusedByDefault="true"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/constraintLayout"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/searhEditText"
-        app:layout_constraintTop_toBottomOf="@+id/searhEditText"
-        tools:listitem="@layout/news_item" />
+        app:layout_constraintHorizontal_bias="0.476"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/searhEditText">
 
-    <TextView
-        android:id="@+id/newsText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="15dp"
-        android:text="Акции и новости"
-        android:textSize="17sp"
-        app:layout_constraintBottom_toTopOf="@+id/newsRecycler"
-        app:layout_constraintStart_toStartOf="@+id/searhEditText" />
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/newsText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginBottom="15dp"
+                android:text="Акции и новости"
+                android:textSize="17sp" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/newsRecycler"
+                android:layout_width="wrap_content"
+                android:layout_height="160dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="15dp"
+                android:focusedByDefault="true"
+                tools:listitem="@layout/news_item" />
+
+            <TextView
+                android:id="@+id/catalogText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="32dp"
+                android:text="Каталог анализов"
+                android:textSize="17sp" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/servicesRecycler"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="15dp"/>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
         android:layout_width="0dp"
         android:layout_height="88dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent">
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
+        app:layout_constraintStart_toStartOf="parent"></androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

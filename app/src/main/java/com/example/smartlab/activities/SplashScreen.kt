@@ -1,4 +1,4 @@
-package com.example.smartlab
+package com.example.smartlab.activities
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
