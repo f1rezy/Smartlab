@@ -1,5 +1,6 @@
 package com.example.smartlab.activities
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -26,7 +27,10 @@ class MainPage : AppCompatActivity() {
         binding = ActivityMainPageBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        init()
+        binding.goToOrderButton.setOnClickListener {
+            val intent = Intent(this, PurchasePage::class.java)
+            startActivity(intent)
+        }
 
         val encryptedPreferences = EncryptedSharedPreferences.create(
             "user",
@@ -35,6 +39,7 @@ class MainPage : AppCompatActivity() {
             EncryptedSharedPreferences.PrefKeyEncryptionScheme.AES256_SIV,
             EncryptedSharedPreferences.PrefValueEncryptionScheme.AES256_GCM)
 
+        init()
         getNews()
         getCatalog()
 
@@ -101,5 +106,4 @@ class MainPage : AppCompatActivity() {
             newsAdapter.addNews(news)
         }
     }
-
 }

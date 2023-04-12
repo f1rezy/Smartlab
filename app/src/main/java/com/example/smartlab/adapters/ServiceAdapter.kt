@@ -1,11 +1,14 @@
 package com.example.smartlab.adapters
 
+import android.graphics.Color
 import com.example.smartlab.models.Service
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.example.smartlab.Order
 import com.example.smartlab.R
+import com.example.smartlab.activities.MainPage
 import com.example.smartlab.databinding.ServiceItemBinding
 import com.example.smartlab.models.News
 
@@ -32,6 +35,9 @@ class ServiceAdapter: RecyclerView.Adapter<ServiceAdapter.ServiceHolder>() {
             title.text = service.name
             timeResult.text = service.time_result
             price.text = service.price
+            button.setOnClickListener {
+                Order.orderList.add(service)
+            }
         }
     }
 

@@ -15,8 +15,11 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
+            android:name=".activities.PurchasePage"
+            android:exported="false" />
+        <activity
             android:name=".activities.CheckPage"
-            android:exported="false"/>
+            android:exported="false" />
         <activity
             android:name=".activities.MainPage"
             android:exported="false" />
